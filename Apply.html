@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now - Ikusasalethu Secondary School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Your custom styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #28a745;
+            /* Match homepage color */
+            animation: slideInDown 0.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #007bff;
+            /* Match homepage color */
+        }
+
+        #application-form {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            /* White background for the form */
+            padding: 20px;
+            animation: bounceIn 0.5s ease-in-out;
+        }
+
+        .form-control:focus {
+            border-color: #28a745;
+            /* Change the border color to green */
+            box-shadow: none;
+            /* Remove the default shadow */
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+            /* Darker green on hover */
+            border-color: #1e7e34;
+        }
+
+        footer {
+            background-color: #343a40;
+        }
+
+        footer a {
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #28a745;
+            /* Change link color on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="text-center py-5 bg-primary text-white">
+        <h1 class="animate__animated animate__fadeInDown">Benjamin Pine Admission Application Form</h1>
+    </header>
+
+    <section id="application-form" class="container my-5">
+        <h2 class="text-center animate__animated animate__fadeIn">Application Information</h2>
+        <p class="text-center animate__animated animate__fadeIn">Please note that the following documentation is
+            required to complete the form:</p>
+        <ul class="list-group mb-4 animate__animated animate__fadeIn">
+            <li class="list-group-item">2 x Certified Unabridged birth certificates/study permit/refugee status/passport
+            </li>
+            <li class="list-group-item">Recent I.D. size photograph of child</li>
+            <li class="list-group-item">Most recent school report & copy of latest School Fee Statement & Fee Clearance
+                Form</li>
+            <li class="list-group-item">Clinic card showing the relevant immunisations</li>
+            <li class="list-group-item">Certified copies of Identity Documents of both biological parents (Should either
+                parent be deceased, a certified copy of the death certificate is required)</li>
+            <li class="list-group-item">Certified copy of marriage certificate/divorce agreement (from the court)</li>
+            <li class="list-group-item">In the case of Legal Guardianship/Adoption ~ certified copies of legal documents
+                produced by the Courts are required</li>
+            <li class="list-group-item">Proof of residence of the biological parents ~ Municipality Account (original
+                municipal account - Affidavit NOT accepted)</li>
+            <li class="list-group-item">Copy of medical aid membership card (if applicable)</li>
+            <li class="list-group-item">Proof of Employment/Letter from Department of Labour (if unemployed) for both
+                parents</li>
+        </ul>
+        <p class="text-center"><strong>Note:</strong> For a learner to be eligible for admission to this school, they
+            must comply with the admissions criteria as determined by the South African Schools Act and regulations.
+            Admission will not be finalized until all relevant documentation has been received by Benjamin Pine Primary
+            School.</p>
+
+        <form action="submit_application.php" method="POST" class="bg-light p-4 rounded shadow"
+            enctype="multipart/form-data">
+            <h3>Applicant Details</h3>
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" required>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+            </div>
+            <div class="mb-3">
+                <label for="grade" class="form-label">Grade Applying For</label>
+                <select class="form-select" id="grade" name="grade" required>
+                    <option value="">Choose...</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                </select>
+            </div>
+
+            <h3>Parent/Guardian Details</h3>
+            <div class="mb-3">
+                <label for="parentName" class="form-label">Parent/Guardian Name</label>
+                <input type="text" class="form-control" id="parentName" name="parentName" required>
+            </div>
+            <div class="mb-3">
+                <label for="parentEmail" class="form-label">Parent/Guardian Email</label>
+                <input type="email" class="form-control" id="parentEmail" name="parentEmail" required>
+            </div>
+            <div class="mb-3">
+                <label for="parentPhone" class="form-label">Parent/Guardian Phone Number</label>
+                <input type="tel" class="form-control" id="parentPhone" name="parentPhone" required>
+            </div>
+
+            <h3>Additional Information</h3>
+            <div class="mb-3">
+                <label for="message" class="form-label">Additional Comments</label>
+                <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+            </div>
+
+            <h3>Document Submission</h3>
+            <p>Please upload the required documents in PDF format:</p>
+            <div class="mb-3">
+                <label for="documents" class="form-label">Upload Documents</label>
+                <input type="file" class="form-control" id="documents" name="documents[]" multiple required
+                    accept=".pdf">
+                <small class="form-text text-muted">You can upload multiple documents (max size: 5MB each).</small>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                <label class="form-check-label" for="terms">
+                    I agree to the <a href="#terms-conditions" class="text-primary">terms and conditions</a>.
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+        </form>
+
+        <div class="mt-4">
+            <h4 class="text-danger">Important Notes:</h4>
+            <p>Admission will not be finalized without submission of all the required documents. The KwaZulu-Natal
+                Department of Education and Culture Circular 30 of 1998 states: "If a parent gained admission for
+                his/her child to a school by making a false statement regarding his/her place of residence, the School
+                is entitled to revoke the agreement which allowed the child concerned admission to such school." The
+                school reserves the right to take legal action against those who submit fraudulent applications.</p>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h5>Get in Touch</h5>
+            <p>Follow us on social media for updates and news:</p>
+            <a href="#" class="text-light"><i class="fab fa-facebook"></i> Facebook</a> |
+            <a href="#" class="text-light"><i class="fab fa-twitter"></i> Twitter</a> |
+            <a href="#" class="text-light"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+        <p class="mt-3">© 2024 Ikusasalethu Secondary School. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
